@@ -25,6 +25,10 @@
 // -----------------------------------------------------------------------------
 var NodeGame = require('./nodegame/nodegame');
 
+//Check for cloud foundry environment variables
+var boundServices = process.env.VCAP_SERVICES ?
+    JSON.parse(process.env.VCAP_SERVICES) : null;
+
 // Setup Game Model
 Shooter = NodeGame.Model(20);
 require('./shooter/game');
@@ -33,7 +37,7 @@ require('./shooter/actors');
 
 // Start a Server
 Shooter.Server({
-    'port': Math.abs(process.argv[2]) || 28785,
+    'port': process.env.VMC_APP_PORT || 28785,
     'status': true,
     'recordFile': './../record[date].js',
     'record': false,

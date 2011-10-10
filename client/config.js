@@ -1,1 +1,1 @@
-var HOST = '127.0.0.1', PORT = 28785;
+var HOST = 'ngs_server.cloudfoundry.com', PORT = 80;
