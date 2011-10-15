@@ -1,1 +1,1 @@
-var HOST = '64.30.136.236', PORT = 4444;
+var HOST = 'openc.no.de', PORT = 443;
